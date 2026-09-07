@@ -145,7 +145,7 @@ nav li{
     margin-bottom: 10px;
 }
 
-.left-section h3{
+.left-section h2{
     font-family: "Cormorant Garamond", serif;
     font-weight: 600;
     font-size: 64px;
@@ -283,7 +283,7 @@ button[type="submit"]:hover{
     border: 1px solid var(--rule-2);
 }
 
-.project h4{
+.project h3{
     font-family: "Cormorant Garamond", serif;
     font-weight: 600;
     font-size: 36px;
@@ -370,8 +370,10 @@ button[type="submit"]:hover{
     gap: 76px;
     padding: 96px max(48px, calc((100% - 1120px) / 2));
 }
-.contact-wrapper span{
+.contact-wrapper span {
       border-bottom: 1px solid var(--rule-1);
+      text-transform: capitalize ;
+        width: 100%;
       padding: 10px;
 }
 .contact-wrapper form > div{
@@ -425,7 +427,17 @@ button[type="submit"]:hover{
     margin-top: 6px;
 }
 
+.social-media-wrapper{
+    margin-top: 40px;
 
+}
+.social-media-links{
+    display: flex;
+    gap: 20px;
+     padding: 20px;
+    justify-content: space-between;
+  
+}
 
 /* Responsive Design */
 
@@ -505,6 +517,9 @@ button[type="submit"]{
    @media(max-width:768px){
     .project h4{
     font-size: 28px;
+}
+.left-section h2{
+    font-size: 46px ;
 }
 .project img{
     width: 300px;
