@@ -1,0 +1,415 @@
+/* ==========================================================================
+   Design tokens
+   ========================================================================== */
+:root{
+    --bg: #EDE6DA;
+    --alt: #F7F3EC;
+    --ink: #3D2B24;
+    --ink-soft: #6B4436;
+    --muted: #8A6A5C;
+    --muted-light: #A5887C;
+    --btn-bg: #5C3324;
+    --btn-bg-hover: #3D2B24;
+    --btn-text: #F7F3EC;
+    --tag-border: rgba(61,43,36,0.35);
+    --rule-1: rgba(61,43,36,0.22);
+    --rule-2: rgba(61,43,36,0.15);
+    --rule-3: rgba(61,43,36,0.12);
+}
+
+/* ==========================================================================
+   Base
+   ========================================================================== */
+*, *::before, *::after{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    background-color: var(--bg);
+    color: var(--ink);
+    font-family: "Lora", serif;
+}
+
+a{
+    color: var(--ink);
+    text-decoration: none;
+}
+
+ul{
+    list-style: none;
+}
+
+img{
+    max-width: 100%;
+    display: block;
+}
+
+/* ==========================================================================
+   Header
+   ========================================================================== */
+header{
+    position: relative;
+    text-align: center;
+    max-width: 1120px;
+    margin: 0 auto;
+    padding: 80px 48px 32px;
+    border-bottom: 1px solid var(--rule-1);
+}
+
+header h1{
+    font-family: "Cormorant Garamond", serif;
+    font-weight: 700;
+    font-size: 96px;
+    line-height: 1.05;
+    letter-spacing: -0.02em;
+    color: var(--ink);
+}
+
+header span{
+    display: block;
+    margin-top: 14px;
+    font-family: "Cormorant Garamond", serif;
+    font-style: italic;
+    font-weight: 400;
+    font-size: 27px;
+    color: var(--ink-soft);
+}
+
+nav{
+    margin-top: 46px;
+}
+
+nav ul{
+    display: flex;
+    gap: 52px;
+    align-items: center;
+    justify-content: center;
+}
+
+nav li{
+    font-family: "Inter", sans-serif;
+    font-weight: 500;
+    font-size: 11.5px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--ink);
+    cursor: pointer;
+}
+
+#dark-light-mode{
+    position: absolute;
+    top: 84px;
+    right: 48px;
+    color: var(--ink);
+    font-size: 15px;
+    cursor: pointer;
+}
+
+/* ==========================================================================
+   Shared "content column" width used by About / Projects / Contact
+   ========================================================================== */
+.about-layout,
+.project-desc,
+.project-list-wrapper{
+    max-width: 1120px;
+    margin: 0 auto;
+    padding-left: 44px;
+    padding-right: 44px;
+}
+
+/* ==========================================================================
+   Shared left-column intro pattern (overline + heading + copy)
+   ========================================================================== */
+.left-section{
+    padding: 0;
+}
+
+.left-section > span:first-child,
+.right-section > span:first-child{
+    display: block;
+    font-family: "Inter", sans-serif;
+    font-weight: 600;
+    font-size: 11px;
+    letter-spacing: 0.20em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 10px;
+}
+
+.left-section h3{
+    font-family: "Cormorant Garamond", serif;
+    font-weight: 600;
+    font-size: 64px;
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+    color: var(--ink);
+    margin-bottom: 20px;
+}
+
+.left-section p{
+    font-size: 17.5px;
+    font-family: "Lora", serif;
+    line-height: 1.7;
+    max-width: 46ch;
+    color: var(--ink);
+    margin-bottom: 18px;
+}
+
+/* ==========================================================================
+   Buttons
+   ========================================================================== */
+.btn,
+button[type="submit"]{
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    background-color: var(--btn-bg);
+    color: var(--btn-text);
+    font-family: "Inter", sans-serif;
+    font-weight: 600;
+    font-size: 11.5px;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    padding: 15px 26px;
+    border: none;
+    border-radius: 1px;
+    cursor: pointer;
+}
+
+.btn::after,
+button[type="submit"]::after{
+    content: "\2192";
+}
+
+.btn:hover,
+button[type="submit"]:hover{
+    background-color: var(--btn-bg-hover);
+}
+
+/* ==========================================================================
+   About
+   ========================================================================== */
+.about-wrapper{
+    padding-top: 84px;
+}
+
+.about-layout{
+    display: grid;
+    grid-template-columns: 1.05fr 0.95fr;
+    gap: 76px;
+    align-items: start;
+}
+
+.about-layout .right-section img{
+    width: 100%;
+    height: 600px;
+    object-fit: cover;
+    object-position: center 20%;
+}
+
+/* ==========================================================================
+   Projects
+   ========================================================================== */
+.projects-wrapper{
+    border-top: 1px solid var(--rule-1);
+    margin-top: 84px;
+    padding-top: 84px;
+    padding-bottom: 84px;
+    text-align: center;
+}
+
+.project-desc{
+    display: grid;
+    grid-template-columns: 1.05fr 0.95fr;
+    gap: 76px;
+    align-items: center;
+    text-align: left;
+    margin-bottom: 20px;
+}
+
+.project-desc .right-section p{
+    font-family: "Lora", serif;
+    font-size: 15.5px;
+    line-height: 1.7;
+    max-width: 40ch;
+    color: var(--ink-soft);
+}
+
+.project-list-wrapper{
+    counter-reset: project;
+    text-align: left;
+}
+
+.project{
+    counter-increment: project;
+    display: grid;
+    grid-template-columns: 56px 1fr 1.15fr;
+    gap: 42px;
+    align-items: start;
+    padding: 38px 0 44px;
+    border-top: 1px solid var(--rule-2);
+}
+
+.project::before{
+    content: counter(project, decimal-leading-zero);
+    padding-top: 4px;
+    font-family: "Inter", sans-serif;
+    font-weight: 500;
+    font-size: 10.5px;
+    letter-spacing: 0.16em;
+    color: var(--muted-light);
+}
+
+.project.hidden{
+    display: none;
+}
+.block{
+    display: block;
+}
+.project img{
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    background: var(--alt);
+    border: 1px solid var(--rule-2);
+}
+
+.project h4{
+    font-family: "Cormorant Garamond", serif;
+    font-weight: 600;
+    font-size: 36px;
+    line-height: 1.1;
+    letter-spacing: -0.015em;
+    color: var(--ink);
+    margin-top: 16px;
+}
+
+.project > *:first-child > span:first-child{
+    display: block;
+    font-family: "Inter", sans-serif;
+    font-weight: 600;
+    font-size: 10px;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 10px;
+}
+
+.project p{
+    font-family: "Lora", serif;
+    font-weight: 400;
+    font-size: 17px;
+    line-height: 1.7;
+    max-width: 46ch;
+    color: var(--ink);
+    margin-bottom: 16px;
+}
+
+.tech-stack-container{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 24px;
+}
+
+.tech-stack-container span{
+    font-family: "Inter", sans-serif;
+    font-weight: 500;
+    font-size: 9.5px;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--ink);
+    border: 1px solid var(--tag-border);
+    background: transparent;
+    padding: 6px 14px;
+}
+
+.anchor-wrapper{
+    display: flex;
+    gap: 28px;
+}
+
+.anchor-wrapper a{
+    font-family: "Inter", sans-serif;
+    font-weight: 500;
+    font-size: 11px;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--ink);
+    text-decoration: underline;
+    text-decoration-color: var(--tag-border);
+    text-underline-offset: 5px;
+}
+
+.anchor-wrapper a:hover{
+    color: var(--ink-soft);
+}
+
+.projects-wrapper > .btn{
+    margin: 32px auto 0;
+}
+
+/* ==========================================================================
+   Contact
+   ========================================================================== */
+.contact-wrapper{
+    background-color: var(--alt);
+    border-top: 1px solid var(--rule-1);
+    display: grid;
+    grid-template-columns: 1.05fr 0.95fr;
+    gap: 76px;
+    padding: 96px max(48px, calc((100% - 1120px) / 2));
+}
+
+.contact-wrapper form > div{
+    margin-bottom: 22px;
+}
+
+.contact-wrapper label{
+    display: block;
+    font-family: "Inter", sans-serif;
+    font-weight: 500;
+    font-size: 11px;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--ink-soft);
+    margin-bottom: 9px;
+}
+
+.contact-wrapper input,
+.contact-wrapper select,
+.contact-wrapper textarea{
+    width: 100%;
+    background: transparent;
+    border: none;
+    border-bottom: 1px solid var(--tag-border);
+    padding: 8px 0;
+    font-family: "Lora", serif;
+    font-size: 16px;
+    color: var(--ink);
+}
+
+.contact-wrapper select{
+    appearance: none;
+    -webkit-appearance: none;
+    cursor: pointer;
+}
+
+.contact-wrapper textarea{
+    border: 1px solid var(--tag-border);
+    padding: 12px;
+    resize: vertical;
+}
+
+.contact-wrapper input:focus,
+.contact-wrapper select:focus,
+.contact-wrapper textarea:focus{
+    outline: none;
+    border-color: var(--btn-bg);
+}
+
+.contact-wrapper button[type="submit"]{
+    margin-top: 6px;
+}
