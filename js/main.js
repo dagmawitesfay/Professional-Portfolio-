@@ -1,8 +1,7 @@
 
 // to store the root 
 const roots= document.documentElement
-const seeMoreButton = document.querySelector(".see-more")
-seeMoreButton.addEventListener("click", seeMore)
+
 
 const sectionOfProject = document.querySelectorAll(".project.hidden")
 
