@@ -27,7 +27,7 @@ This project showcases:
 
 ## Live Demo
 
-dagmawitesfay.netlify.app/
+https://dagmawitesfay.netlify.app/
 
 ## Contact
 
